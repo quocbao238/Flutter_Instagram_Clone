@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/profile.dart';
 
 // https://dribbble.com/shots/8514579/attachments/799201?mode=media
 
@@ -9,11 +10,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   /* Color */
-  Color backgroundColor = Color.fromRGBO(25, 25, 25, 1.0);
-  Color containerColor = Color.fromRGBO(35, 35, 35, 1.0);
-  Color iconConlor = Color.fromRGBO(65, 65, 65, 1.0);
-  Color textColor = Colors.grey[400];
-  Color nameColor = Colors.grey[200];
+  final Color backgroundColor = Color.fromRGBO(25, 25, 25, 1.0);
+  final Color containerColor = Color.fromRGBO(35, 35, 35, 1.0);
+  final Color iconConlor = Color.fromRGBO(65, 65, 65, 1.0);
+  final Color textColor = Colors.grey[400];
+  final Color nameColor = Colors.grey[200];
 
   /* Margin - padding*/
   double marginSize = 12.0;
@@ -24,7 +25,8 @@ class _HomeState extends State<Home> {
       backgroundColor: backgroundColor,
       body: Column(
         children: <Widget>[
-          /* Top Instagram */
+/************************************************************************* */
+/* Top Instagram */
           Container(
             margin: EdgeInsets.only(
               top: marginSize * 3,
@@ -42,8 +44,9 @@ class _HomeState extends State<Home> {
                       width: 20.0,
                     ),
                     Container(
-                        margin: EdgeInsets.only(top: 3.0),
-                        child: IconCustom('assets/nameinsta.png', 120.0)),
+                      margin: EdgeInsets.only(top: 3.0),
+                      child: IconCustom('assets/nameinsta.png', 120.0),
+                    ),
                   ],
                 ),
                 Container(
@@ -63,177 +66,309 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          /* Top List Your Story */
+/************************************************************************* */
+/* Top List Your Story */
           Container(
             margin: EdgeInsets.only(
-                top: marginSize, left: marginSize, right: marginSize),
+                top: marginSize,
+                left: marginSize * 0.5,
+                right: marginSize * 0.5),
             height: 90.0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              // padding: EdgeInsets.only(left: marginSize*3,right: marginSize*3),
               children: <Widget>[
                 MyStoryAvatar(),
                 StoryAvatar(
                   name: 'Lee Wolfe',
-                  urlIcon: 'assets/avatar1.png',
+                  urlIcon: 'assets/nancy1.jpg',
                 ),
                 StoryAvatar(
                   name: 'Juan',
-                  urlIcon: 'assets/avatar2.png',
+                  urlIcon: 'assets/nancy3.jpg',
                 ),
                 StoryAvatar(
                   name: 'Condy',
-                  urlIcon: 'assets/avatar3.png',
+                  urlIcon: 'assets/nancy2.jpg',
                 ),
                 StoryAvatar(
                   name: 'Alaska',
-                  urlIcon: 'assets/avatar4.png',
+                  urlIcon: 'assets/nacy.png',
+                ),
+                StoryAvatar(
+                  name: 'Lee Wolfe',
+                  urlIcon: 'assets/nancy1.jpg',
+                ),
+                StoryAvatar(
+                  name: 'Juan',
+                  urlIcon: 'assets/nancy3.jpg',
+                ),
+                StoryAvatar(
+                  name: 'Condy',
+                  urlIcon: 'assets/nancy2.jpg',
+                ),
+                StoryAvatar(
+                  name: 'Alaska',
+                  urlIcon: 'assets/nacy.png',
                 ),
               ],
             ),
           ),
-          /* Center Image & Like Share  & Comment*/
-          SizedBox(
-            height: marginSize,
-          ),
+          SizedBox(height: marginSize),
+/************************************************************************* */
+/* Center Image & Like Share  & Comment*/          /* Page */
           Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(40), color: containerColor),
-            child: Column(
+            height: 587.5,
+            // color: Colors.white,
+            child: Stack(
+              alignment: AlignmentDirectional.topCenter,
               children: <Widget>[
-                /* Image  */
-                Container(
-                  margin: EdgeInsets.only(bottom: marginSize),
-                  height: 350,
-                  decoration: BoxDecoration(
-                      // color: Colors.red,
-                      image: DecorationImage(
-                          image: AssetImage('assets/nacy.png'),
-                          fit: BoxFit.fill),
-                      borderRadius: BorderRadius.circular(32.0)),
-                  // child: ,
+                ListView(
+                  scrollDirection: Axis.vertical,
+                  // padding: EdgeInsets.only(top:16.0,bottom: 8.0),
+                  children: <Widget>[
+                    PageView(
+                      containerColor: containerColor,
+                      marginSize: marginSize,
+                      image: 'assets/nancy1.jpg',
+                    ),
+                    PageView(
+                        containerColor: containerColor,
+                        marginSize: marginSize,
+                        image: 'assets/nancy2.jpg'),
+                    PageView(
+                        containerColor: containerColor,
+                        marginSize: marginSize,
+                        image: 'assets/nancy3.jpg'),
+                    PageView(
+                        containerColor: containerColor,
+                        marginSize: marginSize,
+                        image: 'assets/nancy4.jpg'),
+                    PageView(
+                        containerColor: containerColor,
+                        marginSize: marginSize,
+                        image: 'assets/nancy5.jpg'),
+                    PageView(
+                      containerColor: containerColor,
+                      marginSize: marginSize,
+                      image: 'assets/nancy6.jpg',
+                    ),
+                    PageView(
+                        containerColor: containerColor,
+                        marginSize: marginSize,
+                        image: 'assets/nancy7.jpg'),
+                    PageView(
+                        containerColor: containerColor,
+                        marginSize: marginSize,
+                        image: 'assets/nancy8.jpg'),
+                    PageView(
+                        containerColor: containerColor,
+                        marginSize: marginSize,
+                        image: 'assets/nancy9.jpg'),
+                    PageView(
+                        containerColor: containerColor,
+                        marginSize: marginSize,
+                        image: 'assets/nancy1.jpg')
+                  ],
                 ),
-                /* Like Share */
-                Container(
-                  margin: EdgeInsets.only(
-                      top: marginSize * 0.5,
-                      right: marginSize * 2,
-                      left: marginSize * 2),
-                  height: 40.0,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      /* Favorite Like */
-                      Container(
-                        width: 120.0,
-                        child: Row(
-                          children: <Widget>[
-                            Icon(
-                              Icons.favorite_border,
-                              size: 24.0,
-                              color: Colors.white70,
-                            ),
-                            SizedBox(
-                              width: 18.0,
-                            ),
-                            Text(
-                              '67.123',
-                              style: TextStyle(
-                                  color: Colors.white30, fontSize: 18.0),
-                            )
-                          ],
+                /* Bottom Home */
+                Positioned(
+                  bottom: 0.0,
+                  child: Container(
+                    width: 360,
+                    height: 50.0,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(42),
+                        color: containerColor),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Icon(
+                          Icons.home,
+                          size: 30,
+                          color: Colors.white70,
                         ),
-                      ),
-                      Container(
-                        width: 140.0,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            IconCustom('assets/iconchat.png', 20.0),
-                            IconCustom('assets/sendicon.png', 20.0),
-                            Icon(Icons.bookmark_border,
-                                size: 24.0, color: Colors.white70),
-                          ],
+                        Icon(
+                          Icons.search,
+                          size: 30,
+                          color: Colors.white70,
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                /* Comment */
-                Container(
-                  margin: EdgeInsets.only(
-                    top: marginSize,
-                    left: marginSize * 2,
-                  ),
-                  // right: marginSize * 2),
-                  height: 50.0,
-                  child: Row(
-                    children: <Widget>[
-                      /* Avatar comment */
-                      Container(
-                        width: 40,
-                        child: CircleAvatar(
-                          backgroundImage: AssetImage('assets/nacy.png'),
+                        Container(
+                          margin: EdgeInsets.only(right: 5.0),
+                          width: 30.0,
+                          height: 30.0,
+                          decoration: BoxDecoration(
+                              // color: Colors.white,
+                              borderRadius: BorderRadius.circular(8.0),
+                              border:
+                                  Border.all(width: 2.0, color: Colors.white)),
+                          child: Icon(Icons.add, size: 25, color: iconConlor),
                         ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: marginSize),
-                        width: 290,
-                        child: Row(
-                          children: <Widget>[
-                            Text(
-                              'Nancy',
-                              style: TextStyle(
-                                color: Colors.white,
-                                letterSpacing: 1.0,
-                                fontSize: 18.0,
+                        Icon(
+                          Icons.favorite_border,
+                          size: 30,
+                          color: Colors.white70,
+                        ),
+                        Tab(
+                          icon: Container(
+                            child: GestureDetector(
+                              child: Image(
+                                image: AssetImage(
+                                  'assets/user.png',
+                                ),
+                                fit: BoxFit.cover,
+                                color: Colors.white70,
                               ),
+                              onTap: () {
+                                setState(() {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Profile(),
+                                      ));
+                                });
+                              },
                             ),
-                            SizedBox(
-                              width: 8.0,
-                            ),
-                            Text(
-                              'Momolan Dublekick - Korea',
-                              style: TextStyle(
-                                  fontSize: 16.0, color: Colors.white70),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
+                            width: 25.0,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 20.0,
                 )
               ],
             ),
           ),
-          //Bottom Home
-          SizedBox(height: 33.0),
+          // SizedBox(height: 47.5),
+        ],
+      ),
+    );
+  }
+}
+
+class PageView extends StatelessWidget {
+  PageView({
+    @required this.containerColor,
+    @required this.marginSize,
+    @required this.image,
+  });
+
+  final Color containerColor;
+  final double marginSize;
+  final String image;
+
+  // PageView(@required this.containerColor,@required this.marginSize);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 500.0,
+      margin: EdgeInsets.only(bottom: marginSize * 2),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(40), color: containerColor),
+      child: Column(
+        children: <Widget>[
+          /* Image  */
           Container(
-            // alignment: AlignmentDirectional.centerEnd,
-            width: 350,
-            height: 50.0,
+            margin: EdgeInsets.only(bottom: marginSize),
+            height: 350,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(42), color: containerColor),
+                // color: Colors.red,
+                image: DecorationImage(
+                    image: AssetImage(image), fit: BoxFit.cover),
+                borderRadius: BorderRadius.circular(32.0)),
+            // child: ,
+          ),
+          /* Like Share */
+          Container(
+            margin: EdgeInsets.only(
+                top: marginSize * 0.5,
+                right: marginSize * 2,
+                left: marginSize * 2),
+            height: 40.0,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Icon(Icons.home, size: 30, color: Colors.white70),
-                Icon(Icons.search, size: 30, color: Colors.white70),
+                /* Favorite Like */
                 Container(
-                  width: 30.0,
-                  height: 30.0,
-                  decoration: BoxDecoration(
-                      // color: Colors.white,
-                      borderRadius: BorderRadius.circular(8.0),
-                      border: Border.all(width: 2.0, color: Colors.white)),
-                  child: Icon(Icons.add, size: 25, color: iconConlor),
+                  width: 120.0,
+                  child: Row(
+                    children: <Widget>[
+                      Icon(
+                        Icons.favorite_border,
+                        size: 24.0,
+                        color: Colors.white70,
+                      ),
+                      SizedBox(
+                        width: 18.0,
+                      ),
+                      Text(
+                        '67.123',
+                        style: TextStyle(color: Colors.white30, fontSize: 18.0),
+                      )
+                    ],
+                  ),
                 ),
-                Icon(Icons.favorite_border, size: 30, color: Colors.white70),
-                IconCustom('assets/user.png',25.0)
+                Container(
+                  width: 140.0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      IconCustom('assets/iconchat.png', 20.0),
+                      IconCustom('assets/sendicon.png', 20.0),
+                      Icon(Icons.bookmark_border,
+                          size: 24.0, color: Colors.white70),
+                    ],
+                  ),
+                ),
               ],
             ),
+          ),
+          /* Comment */
+          Container(
+            margin: EdgeInsets.only(
+              top: marginSize,
+              left: marginSize * 2,
+            ),
+            // right: marginSize * 2),
+            height: 50.0,
+            child: Row(
+              children: <Widget>[
+                /* Avatar comment */
+                Container(
+                  width: 40,
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage('assets/nacy.png'),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: marginSize),
+                  width: 290,
+                  child: Row(
+                    children: <Widget>[
+                      Text(
+                        'Nancy',
+                        style: TextStyle(
+                          color: Colors.white,
+                          letterSpacing: 1.0,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 8.0,
+                      ),
+                      Text(
+                        'Momolan Dublekick - Korea',
+                        style: TextStyle(fontSize: 16.0, color: Colors.white70),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 20.0,
           )
         ],
       ),
@@ -307,40 +442,43 @@ class StoryAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Stack(
-          alignment: AlignmentDirectional.center,
-          children: <Widget>[
-            Container(
-              width: 60.0,
-              height: 60.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(34),
-                color: Colors.red,
+    return Container(
+      margin: EdgeInsets.only(left: 18.0),
+      child: Column(
+        children: <Widget>[
+          Stack(
+            alignment: AlignmentDirectional.center,
+            children: <Widget>[
+              Container(
+                width: 60.0,
+                height: 60.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(34),
+                  color: Colors.red,
+                ),
               ),
-            ),
-            Container(
-              width: 50.0,
-              height: 50.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(64),
-                image: DecorationImage(image: AssetImage(urlIcon)),
+              Container(
+                width: 50.0,
+                height: 50.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(64),
+                  image: DecorationImage(image: AssetImage(urlIcon)),
+                ),
               ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 5.0,
-        ),
-        Text(
-          name,
-          style: TextStyle(
-            color: Colors.white60,
-            fontSize: 14.0,
+            ],
           ),
-        )
-      ],
+          SizedBox(
+            height: 5.0,
+          ),
+          Text(
+            name,
+            style: TextStyle(
+              color: Colors.white60,
+              fontSize: 14.0,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

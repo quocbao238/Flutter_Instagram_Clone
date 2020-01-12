@@ -23,6 +23,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  # fullscreen_mode: ^1.0.1
+
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +56,21 @@ flutter:
    - assets/iconchat.png
    - assets/igtvi_icon.png
    - assets/user.png
+   - assets/follower.png
+   - assets/gallery.png
+   - assets/nancy1.jpg
+   - assets/nancy2.jpg
+   - assets/nancy3.jpg
+   - assets/nancy4.jpg
+   - assets/nancy5.jpg
+   - assets/nancy6.jpg
+   - assets/nancy7.jpg
+   - assets/nancy8.jpg
+   - assets/nancy9.jpg
+   - assets/facebook.png
+   - assets/iconintro.png
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
