@@ -1,8 +1,8 @@
-# Flutter_Instagram_UI
-Desgin Fluter Instagram UI/UX
+# Flutter_Instagram_Clone_UI
 
-<img src="https://github.com/baobon/Flutter_Instagram_UI/blob/master/image/screen1.png" width="600"> 
-<img src="https://github.com/baobon/Flutter_Instagram_UI/blob/master/image/screen2.png" width="600"> 
+## Screenshots
+<img src="https://github.com/baobon/Flutter_Instagram_UI/blob/master/image/screen1.png" width="900"> 
+<img src="https://github.com/baobon/Flutter_Instagram_UI/blob/master/image/screen2.png" width="900"> 
 
 ## Getting Started
 
