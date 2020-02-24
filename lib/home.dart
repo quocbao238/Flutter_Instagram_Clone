@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/profile.dart';
+import 'package:instagram_clone/search.dart';
 
 // https://dribbble.com/shots/8514579/attachments/799201?mode=media
 
@@ -188,10 +189,22 @@ class _HomeState extends State<Home> {
                           size: 30,
                           color: Colors.white70,
                         ),
-                        Icon(
-                          Icons.search,
-                          size: 30,
-                          color: Colors.white70,
+                        // Icon(
+                        //   Icons.search,
+                        //   size: 30,
+                        //   color: Colors.white70,
+                        // ),
+                        IconButton(
+                          icon: Icon(Icons.search), 
+                          color: Colors.white,
+                          iconSize: 30.0,
+                        onPressed: (){
+                           Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => SearchScreen(),
+                                      ));
+                        }
                         ),
                         Container(
                           margin: EdgeInsets.only(right: 5.0),
